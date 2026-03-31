@@ -208,3 +208,28 @@ header p {
   body { padding: 1rem; }
   header h1 { font-size: 2rem; }
 }
+
+/* Category Badges */
+.report-icon {
+  position: relative;
+}
+
+.category-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #3b82f6; 
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.report-card:hover .category-badge {
+  transform: translateY(-2px);
+}

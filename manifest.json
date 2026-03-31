@@ -1,26 +1,45 @@
 {
     "reports": [
         {
+            "name": "Omo_Sport_Intelligence_2026.html",
+            "path": "reports/omo/Omo_Sport_Intelligence_2026.html",
+            "category": "omo",
+            "size": 7457493,
+            "modified": "2026-03-31T18:00:02.342545",
+            "created": "2026-03-31T20:56:05.730733"
+        },
+        {
+            "name": "Omo_Original_Lover4.html",
+            "path": "reports/omo/Omo_Original_Lover4.html",
+            "category": "omo",
+            "size": 20081196,
+            "modified": "2026-03-31T17:55:13.842320",
+            "created": "2026-03-31T20:56:05.789584"
+        },
+        {
             "name": "newsletter_final_14-19-3.html",
-            "path": "reports/newsletter_final_14-19-3.html",
+            "path": "reports/newsletters/newsletter_final_14-19-3.html",
+            "category": "newsletters",
             "size": 106773,
             "modified": "2026-03-31T17:34:15.903387",
-            "created": "2026-03-31T17:34:18.492921"
+            "created": "2026-03-31T20:56:06.083391"
         },
         {
             "name": "moi_newsletter_ynm_21-26-3.html",
-            "path": "reports/moi_newsletter_ynm_21-26-3.html",
+            "path": "reports/newsletters/moi_newsletter_ynm_21-26-3.html",
+            "category": "newsletters",
             "size": 28355,
             "modified": "2026-03-31T17:30:20.600291",
-            "created": "2026-03-31T17:30:23.230645"
+            "created": "2026-03-31T20:56:05.994323"
         },
         {
             "name": "q1-ynm-digital-report.html",
-            "path": "reports/q1-ynm-digital-report.html",
+            "path": "reports/digital/q1-ynm-digital-report.html",
+            "category": "digital",
             "size": 26647,
             "modified": "2026-03-31T16:37:49.777649",
-            "created": "2026-03-31T16:37:50.167641"
+            "created": "2026-03-31T20:56:06.218569"
         }
     ],
-    "lastUpdated": "2026-03-31T17:34:23.002086"
+    "lastUpdated": "2026-03-31T20:57:43.058463"
 }

@@ -36,13 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const dateStr = new Date(report.modified).toLocaleDateString();
             const sizeStr = formatBytes(report.size);
+            const category = report.category || 'General';
 
             card.innerHTML = `
                 <div class="report-icon">
                     <i data-lucide="file-text"></i>
+                    <span class="category-badge">${category}</span>
                 </div>
                 <div class="report-info">
-                    <h3>${report.name}</h3>
+                    <h3>${report.name.replace('.html', '').replace(/_/g, ' ')}</h3>
                     <div class="report-meta">
                         <span><i data-lucide="calendar"></i> ${dateStr}</span>
                         <span><i data-lucide="hard-drive"></i> ${sizeStr}</span>
