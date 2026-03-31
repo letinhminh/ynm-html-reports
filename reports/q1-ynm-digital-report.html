@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Hiệu Suất Digital Q1 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Chosen Palette: Corporate Slate & Trust Blue (Slate-50 bg, Slate-800 text, Blue-600 primary, Emerald-500 success, Rose-500 danger) -->
+    
+    <!-- Application Structure Plan: 
+    1. Header & KPI Strip: Immediate high-level overview of the most critical numbers (Users, Growth, Conversions).
+    2. Section 1 (Traffic Channels): A horizontal bar chart to effectively compare the dramatic shifts across multiple channels YoY. Chosen for clear label reading.
+    3. Section 2 (SEO & Cannibalization): A conceptual, interactive HTML/CSS representation of a Search Engine Results Page (SERP) to visually explain "Cannibalization" without needing complex charts, alongside KPI cards for the SEO Paradox (Impressions vs Clicks).
+    4. Section 3 (Actionable Recommendations): An interactive accordion/tab system to present the 5 recommendations cleanly, preventing text overload while encouraging exploration.
+    This structure is chosen because it moves the user logically from "What happened" to "Why it happened" to "What we should do next."
+    -->
+    
+    <!-- Visualization & Content Choices:
+    - Traffic Data -> Goal: Compare YoY -> Viz: Horizontal Bar Chart (Chart.js) -> Justification: Best for comparing categories with readable labels.
+    - SEO Paradox -> Goal: Highlight contradiction -> Viz: Big Number KPI Cards (HTML/CSS) -> Justification: Immediate impact of +31% vs -45%.
+    - Cannibalization -> Goal: Explain concept -> Viz: Interactive Mock SERP (HTML/Tailwind + JS) -> Justification: Visually demonstrates Ads pushing down SEO better than a standard chart. NO SVG used.
+    - Recommendations -> Goal: Organize text -> Viz: Interactive Accordion (HTML/JS) -> Justification: Keeps the dashboard clean and user-focused.
+    -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        /* Essential Chart Container Constraints */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .tab-active { background-color: #2563eb; color: white; border-color: #2563eb; }
+        .tab-inactive { background-color: #f8fafc; color: #475569; border-color: #e2e8f0; hover:bg-slate-100; }
+        
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+    <!-- Header & Executive Summary -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">Báo Cáo Hiệu Suất Digital</h1>
+                <p class="text-sm text-slate-500">Kỳ báo cáo: Quý 1/2025 vs Quý 1/2026 | Dành cho: Digital Manager</p>
+            </div>
+            <div class="text-right">
+                <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                    &#128202; Dữ liệu đã đồng bộ
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-12">
+
+        <!-- KPI Strip -->
+        <section aria-labelledby="kpi-heading">
+            <h2 id="kpi-heading" class="sr-only">Tổng quan chỉ số</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col justify-center items-center text-center">
+                    <dt class="text-sm font-medium text-slate-500">Tổng Users (Q1/2026)</dt>
+                    <dd class="mt-2 text-4xl font-extrabold text-slate-900">28,096</dd>
+                    <span class="mt-2 text-sm font-semibold text-emerald-600 flex items-center gap-1">
+                        &#9650; +28% YoY
+                    </span>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col justify-center items-center text-center">
+                    <dt class="text-sm font-medium text-slate-500">Chuyển đổi (Conversions)</dt>
+                    <dd class="mt-2 text-4xl font-extrabold text-blue-600">84</dd>
+                    <span class="mt-2 text-sm font-medium text-slate-500">Từ Google Ads</span>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col justify-center items-center text-center">
+                    <dt class="text-sm font-medium text-slate-500">Clicks Tự Nhiên (SEO)</dt>
+                    <dd class="mt-2 text-4xl font-extrabold text-slate-900">~10K</dd>
+                    <span class="mt-2 text-sm font-semibold text-rose-600 flex items-center gap-1">
+                        &#9660; -45% YoY
+                    </span>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col justify-center items-center text-center">
+                    <dt class="text-sm font-medium text-slate-500">Users từ Paid Media</dt>
+                    <dd class="mt-2 text-4xl font-extrabold text-slate-900">5,933</dd>
+                    <span class="mt-2 text-sm font-semibold text-emerald-600 flex items-center gap-1">
+                        &#9650; Từ 4 (Q1/25)
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Traffic Channel Shift -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-2">1. Dịch Chuyển Cơ Cấu Nguồn Truy Cập</h2>
+                <p class="text-slate-600">
+                    Sự gia tăng 28% tổng lượng người dùng chủ yếu được thúc đẩy bởi chiến lược chủ động tìm kiếm khách hàng. Dữ liệu cho thấy sự bùng nổ của <strong class="text-blue-600">Paid Media</strong> (đóng góp gần 6,000 users) và sự sụt giảm đáng chú ý của <strong class="text-rose-600">Organic Search</strong> và Email Marketing.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="trafficChart"></canvas>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg">
+                <div>
+                    <span class="font-bold text-emerald-600">&#10003; Điểm sáng:</span> Paid Media & Social Media (+64%) đang làm rất tốt việc mang lại lượng truy cập mới. Lượng Direct tăng đột biến (+212%).
+                </div>
+                <div>
+                    <span class="font-bold text-rose-600">&#9888; Lưu ý:</span> Lượng Direct cao bất thường có thể do thiếu mã UTM ở một số chiến dịch. Cần rà soát lại khâu Tracking.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: SEO Paradox & Cannibalization -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Left Column: The SEO Paradox -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 flex flex-col">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">2. Nghịch Lý Dữ Liệu SEO (GSC)</h2>
+                    <p class="text-slate-600">
+                        Báo cáo Google Search Console chỉ ra một hiện tượng thú vị: Website xuất hiện nhiều hơn trên kết quả tìm kiếm, nhưng người dùng lại click ít hơn. Không phải do kỹ thuật SEO có vấn đề.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-100 text-center">
+                        <div class="text-sm font-medium text-emerald-800 mb-1">Hiển thị (Impressions)</div>
+                        <div class="text-2xl font-bold text-emerald-600">+31%</div>
+                        <div class="text-xs text-emerald-700 mt-1">Lên ~431K</div>
+                    </div>
+                    <div class="bg-rose-50 rounded-lg p-4 border border-rose-100 text-center">
+                        <div class="text-sm font-medium text-rose-800 mb-1">Lượt Click</div>
+                        <div class="text-2xl font-bold text-rose-600">-45%</div>
+                        <div class="text-xs text-rose-700 mt-1">Xuống ~10K</div>
+                    </div>
+                </div>
+
+                <div class="flex-grow">
+                    <h3 class="font-semibold text-slate-800 mb-2">Nguyên nhân cốt lõi:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <span class="text-rose-500 mt-1">&#10006;</span>
+                            <span class="text-sm text-slate-600"><strong>Thoái trào xu hướng:</strong> Mất ~2,100 clicks từ nhóm từ khóa "Check var là gì" do trend đã hạ nhiệt so với năm ngoái.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-500 mt-1">&#9432;</span>
+                            <span class="text-sm text-slate-600"><strong>Sụt giảm Brand Search:</strong> Các từ khóa "YouNet Media", "SocialTrend" giảm >50% clicks dù thứ hạng SEO vẫn Top 1-3. Nguyên nhân nằm ở bảng bên cạnh.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Cannibalization Interactive Demo -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">3. Hiện Tượng "Ăn Thịt" (Cannibalization)</h2>
+                    <p class="text-slate-600 text-sm">
+                        Quý 1/2026, chúng ta bắt đầu chạy Google Ads. Quảng cáo đã lấy đi khoảng 1,500 - 1,800 clicks của SEO ở nhóm từ khóa thương hiệu. Hãy tương tác với mô phỏng bên dưới để hiểu lý do.
+                    </p>
+                </div>
+
+                <!-- Interactive SERP Mockup -->
+                <div class="bg-slate-100 rounded-lg p-4 font-sans text-sm border border-slate-200">
+                    <div class="mb-3 text-slate-500 font-medium">Kết quả tìm kiếm cho: <span class="bg-white px-2 py-1 rounded border shadow-sm">YouNet Media</span></div>
+                    
+                    <!-- Ad Result -->
+                    <div class="bg-white p-3 rounded border border-blue-200 mb-3 shadow-sm relative group hover:ring-2 hover:ring-blue-400 cursor-pointer transition-all" onclick="simulateClick('ad')">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-xs font-bold text-slate-700">Tài trợ</span>
+                            <span class="text-xs text-slate-400">&bull;</span>
+                            <span class="text-xs text-slate-500">younetmedia.com</span>
+                        </div>
+                        <div class="text-blue-700 font-medium text-base mb-1 group-hover:underline">YouNet Media - Agency Phân Tích Dữ Liệu</div>
+                        <div class="text-slate-600 text-xs">Giải pháp lắng nghe mạng xã hội hàng đầu. Đăng ký ngay để nhận tư vấn...</div>
+                    </div>
+
+                    <!-- SEO Result -->
+                    <div class="bg-white p-3 rounded border border-slate-200 shadow-sm hover:ring-2 hover:ring-slate-400 cursor-pointer transition-all" onclick="simulateClick('seo')">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-xs text-slate-500">younetmedia.com</span>
+                        </div>
+                        <div class="text-blue-700 font-medium text-base mb-1 hover:underline">YouNet Media: Nền tảng Social Listening...</div>
+                        <div class="text-slate-600 text-xs">Trang chủ YouNet Media. Khám phá các xu hướng mạng xã hội mới nhất...</div>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex justify-between items-center text-sm">
+                    <div class="text-slate-600">Phân bổ Click Mô phỏng:</div>
+                    <div class="flex gap-4 font-semibold">
+                        <span class="text-blue-600">Ads: <span id="ad-clicks">80</span>%</span>
+                        <span class="text-slate-600">SEO: <span id="seo-clicks">20</span>%</span>
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-slate-500 italic">
+                    * Mặc dù Ads lấy mất click của SEO, nhưng đây là sự đánh đổi tốt vì Ads mang lại <strong>84 Conversions</strong> chất lượng và giúp ta kiểm soát trang đích.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Recommendations -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-900 mb-2">4. Khuyến Nghị Hành Động (Action Plan)</h2>
+                <p class="text-slate-600">
+                    Dựa trên những phân tích trên, dưới đây là 5 hành động chiến lược đề xuất cho Quý tới. Nhấp vào từng mục để xem chi tiết.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Navigation / Tabs -->
+                <div class="flex flex-col space-y-2" id="tab-nav">
+                    <!-- Generated by JS -->
+                </div>
+
+                <!-- Content Display -->
+                <div class="md:col-span-2 bg-slate-50 rounded-xl p-6 border border-slate-200 fade-in" id="tab-content">
+                    <!-- Initial Content generated by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm mt-12">
+        <p>&copy; 2026 Digital Performance Dashboard. Dữ liệu tổng hợp từ GA4, Google Search Console và Google Ads.</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initTrafficChart();
+            initRecommendations();
+        });
+
+        // Data Storage
+        const trafficData = {
+            labels: ['Paid Media', 'Direct', 'Social Media', 'Organic Search', 'Email Marketing'],
+            q1_2025: [4, 2082, 1614, 14478, 2559],
+            q1_2026: [5933, 6499, 2655, 9870, 599]
+        };
+
+        const recommendationsData = [
+            {
+                id: 'rec1',
+                title: '&#128176; Tối ưu Ngân sách Brand Ads',
+                content: '<h4 class="font-bold text-slate-800 text-lg mb-2">Thử nghiệm Giảm Giá Thầu Brand Search</h4><p class="text-slate-600 mb-3">Hiện tại Ads đang lấy đi traffic tự nhiên của thương hiệu. Thử nghiệm giảm giá thầu (bidding) cho các từ khóa "YouNet Media" vào các giờ thấp điểm.</p><p class="text-slate-600"><strong>Mục tiêu:</strong> Quan sát xem SEO có tự động bù đắp lại lượng click này không để tiết kiệm chi phí, trong khi vẫn duy trì ngân sách cho các từ khóa Dịch vụ (Generic) đang chuyển đổi tốt.</p>'
+            },
+            {
+                id: 'rec2',
+                title: '&#128221; Đẩy mạnh SEO Evergreen Content',
+                content: '<h4 class="font-bold text-slate-800 text-lg mb-2">Giảm phụ thuộc vào Keyword Theo Trend</h4><p class="text-slate-600 mb-3">Sự sụt giảm mạnh từ từ khóa "Check var" cho thấy traffic từ trend không bền vững. Cần chuyển hướng chiến lược nội dung.</p><p class="text-slate-600"><strong>Hành động:</strong> Tập trung xây dựng các bài viết chuyên sâu, có giá trị lâu dài (Evergreen) như: <em>"Quy trình nghiên cứu thị trường hiệu quả"</em>, <em>"Các công cụ Social Listening tốt nhất"</em> để nuôi dưỡng traffic ổn định.</p>'
+            },
+            {
+                id: 'rec3',
+                title: '&#128269; Rà soát Mã UTM & Tracking',
+                content: '<h4 class="font-bold text-slate-800 text-lg mb-2">Xử lý lượng Direct Traffic tăng bất thường</h4><p class="text-slate-600 mb-3">Lượng truy cập Direct tăng 212% là một dấu hiệu cảnh báo về việc đứt gãy tracking, khiến hệ thống không nhận diện được nguồn gốc người dùng.</p><p class="text-slate-600"><strong>Hành động:</strong> Thiết lập quy trình bắt buộc dán mã UTM chuẩn xác cho tất cả các link chia sẻ trên Social Media, trong Email và đặc biệt là các chiến dịch Paid Ads mới.</p>'
+            },
+            {
+                id: 'rec4',
+                title: '&#129302; Khai thác AI Search (GEO)',
+                content: '<h4 class="font-bold text-slate-800 text-lg mb-2">Đón đầu Xu hướng Tìm kiếm bằng AI</h4><p class="text-slate-600 mb-3">Traffic từ ChatGPT và Gemini đã tăng 35%. Đây là tệp người dùng chất lượng cao, đang tìm kiếm câu trả lời trực tiếp thay vì lướt web truyền thống.</p><p class="text-slate-600"><strong>Hành động:</strong> Tối ưu hóa cấu trúc dữ liệu website (Schema Markup) và viết nội dung theo định dạng Hỏi-Đáp (Q&A) chuyên sâu để các mô hình AI ưu tiên trích dẫn thương hiệu vào câu trả lời của chúng (Generative Engine Optimization).</p>'
+            },
+            {
+                id: 'rec5',
+                title: '&#128231; Cải thiện Email Marketing',
+                content: '<h4 class="font-bold text-slate-800 text-lg mb-2">Phục hồi Kênh Retargeting Chi phí thấp</h4><p class="text-slate-600 mb-3">Lượng User từ Email đã giảm mạnh 76%. Đây từng là một kênh tương tác rất tốt với cơ sở dữ liệu khách hàng có sẵn.</p><p class="text-slate-600"><strong>Hành động:</strong> Lọc lại danh sách database khách hàng. Thiết kế các chiến dịch email cá nhân hóa hơn, cung cấp báo cáo ngành độc quyền (Industry Reports) để tăng tỷ lệ Open Rate và Click-Through Rate.</p>'
+            }
+        ];
+
+        // Initialize Chart.js
+        function initTrafficChart() {
+            const ctx = document.getElementById('trafficChart').getContext('2d');
+            
+            // Set default font family for Chart.js
+            Chart.defaults.font.family = 'Inter, ui-sans-serif, system-ui, -apple-system, sans-serif';
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: trafficData.labels,
+                    datasets: [
+                        {
+                            label: 'Quý 1 / 2025',
+                            data: trafficData.q1_2025,
+                            backgroundColor: '#94a3b8', // slate-400
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Quý 1 / 2026',
+                            data: trafficData.q1_2026,
+                            backgroundColor: '#2563eb', // blue-600
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal bar for better label readability
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { usePointStyle: true, boxWidth: 8 }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)', // slate-900
+                            titleFont: { size: 14 },
+                            bodyFont: { size: 13 },
+                            padding: 10,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) {
+                                        label += new Intl.NumberFormat('vi-VN').format(context.parsed.x) + ' Users';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: '#f1f5f9', drawBorder: false },
+                            ticks: { callback: function(value) { return value/1000 + 'k'; } }
+                        },
+                        y: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: {
+                                callback: function(value) {
+                                    // Truncate long labels logic
+                                    let label = this.getLabelForValue(value);
+                                    return label.length > 16 ? label.substr(0, 16) + '...' : label;
+                                }
+                            }
+                        }
+                    },
+                    interaction: { mode: 'nearest', axis: 'y', intersect: false }
+                }
+            });
+        }
+
+        // Interactive SERP Simulation Logic
+        function simulateClick(type) {
+            const adEl = document.getElementById('ad-clicks');
+            const seoEl = document.getElementById('seo-clicks');
+            
+            // Visual feedback loop (just for interaction engagement)
+            let adVal = parseInt(adEl.innerText);
+            let seoVal = parseInt(seoEl.innerText);
+            
+            if(type === 'ad' && adVal < 95) {
+                adVal += 2; seoVal -= 2;
+            } else if (type === 'seo' && seoVal < 50) {
+                adVal -= 2; seoVal += 2;
+            }
+            
+            adEl.innerText = adVal;
+            seoEl.innerText = seoVal;
+            
+            // Highlight effect
+            const effectEl = document.createElement('div');
+            effectEl.className = 'absolute inset-0 bg-blue-100 opacity-50 rounded';
+            effectEl.style.animation = 'fadeOut 0.5s ease-out forwards';
+            event.currentTarget.appendChild(effectEl);
+            setTimeout(() => effectEl.remove(), 500);
+        }
+
+        // Add keyframes dynamically for the click effect
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes fadeOut { from { opacity: 0.5; } to { opacity: 0; } }`;
+        document.head.appendChild(style);
+
+        // Recommendation Accordion/Tab Logic
+        function initRecommendations() {
+            const navContainer = document.getElementById('tab-nav');
+            const contentContainer = document.getElementById('tab-content');
+            
+            // Build Nav Buttons
+            recommendationsData.forEach((rec, index) => {
+                const btn = document.createElement('button');
+                btn.innerHTML = rec.title;
+                btn.className = `text-left px-4 py-3 rounded-lg border text-sm font-medium transition-colors duration-200 focus:outline-none ${index === 0 ? 'tab-active' : 'tab-inactive'}`;
+                btn.onclick = () => selectTab(index, btn);
+                navContainer.appendChild(btn);
+            });
+            
+            // Set Initial Content
+            renderTabContent(0);
+            
+            function selectTab(index, clickedBtn) {
+                // Update button styles
+                Array.from(navContainer.children).forEach(b => {
+                    b.classList.remove('tab-active');
+                    b.classList.add('tab-inactive');
+                });
+                clickedBtn.classList.remove('tab-inactive');
+                clickedBtn.classList.add('tab-active');
+                
+                // Trigger reflow to restart animation
+                contentContainer.classList.remove('fade-in');
+                void contentContainer.offsetWidth; // magic reflow
+                contentContainer.classList.add('fade-in');
+                
+                // Update content
+                renderTabContent(index);
+            }
+            
+            function renderTabContent(index) {
+                const data = recommendationsData[index];
+                contentContainer.innerHTML = data.content;
+            }
+        }
+    </script>
+</body>
+</html>
