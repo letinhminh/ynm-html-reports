@@ -1,0 +1,19 @@
+{
+    "reports": [
+        {
+            "name": "report2.html",
+            "path": "reports/report2.html",
+            "size": 54,
+            "modified": "2026-03-31T16:32:54.826369",
+            "created": "2026-03-31T16:32:55.158523"
+        },
+        {
+            "name": "report1.html",
+            "path": "reports/report1.html",
+            "size": 54,
+            "modified": "2026-03-31T16:32:54.826216",
+            "created": "2026-03-31T16:32:55.156704"
+        }
+    ],
+    "lastUpdated": "2026-03-31T16:33:36.781600"
+}

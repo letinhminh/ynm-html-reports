@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YNM - HTML Reports Archive</title>
+  <meta name="description" content="Dashboard to view and manage team HTML reports effortlessly.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>YNM Reports Dashboard</h1>
+      <p>Secure archive for automated team reports</p>
+    </header>
+
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <span>Total Reports</span>
+        <strong id="total-reports">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Last Update</span>
+        <strong id="last-update">--</strong>
+      </div>
+    </div>
+
+    <div id="report-grid" class="report-grid">
+      <!-- Reports will be dynamically loaded here -->
+      <div class="empty-state">
+        <i data-lucide="loader" class="animate-spin"></i>
+        <p>Loading reports archive...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
