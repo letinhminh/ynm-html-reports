@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Highlights | Campaign Plan</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#121936;
+      --panel-2:#0f1730;
+      --text:#e9ecf7;
+      --muted:#9da7c7;
+      --line:rgba(255,255,255,.08);
+      --brand:#6ea8ff;
+      --brand-2:#7cf5d2;
+      --accent:#ffd166;
+      --danger:#ff7b72;
+      --shadow:0 20px 40px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1280px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 100% -10%, rgba(110,168,255,.20), transparent 60%),
+        radial-gradient(900px 600px at -10% 10%, rgba(124,245,210,.12), transparent 55%),
+        linear-gradient(180deg, #0a1022 0%, #070b16 100%);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .topbar{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter: blur(14px);
+      background:rgba(10,16,34,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .logo-mark{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#08101d;font-weight:900;box-shadow:var(--shadow)}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+    .nav-links a{font-size:13px;color:var(--muted);padding:8px 12px;border:1px solid transparent;border-radius:999px}
+    .nav-links a:hover{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+
+    .hero{padding:54px 0 26px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+    .hero-card,.glass{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}
+    .hero-main{padding:34px;position:relative;overflow:hidden}
+    .hero-main::after{
+      content:"";position:absolute;inset:auto -80px -80px auto;width:260px;height:260px;border-radius:50%;
+      background:radial-gradient(circle, rgba(124,245,210,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-2);padding:8px 12px;border:1px solid rgba(124,245,210,.18);border-radius:999px;background:rgba(124,245,210,.05)}
+    h1{font-size: clamp(42px, 6vw, 76px);line-height:.95;margin:18px 0 12px;letter-spacing:-.04em}
+    .grad{background:linear-gradient(135deg,var(--text),#bdd4ff 50%, #8cecd6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{font-size:18px;color:#c7d0ea;max-width:760px;margin:0 0 26px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 26px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:#dce3fb;font-size:14px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:600;color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#86b8ff);color:#08101d;border-color:transparent}
+    .hero-side{display:grid;gap:18px}
+    .mini{padding:24px}
+    .mini h3{margin:0 0 8px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .big-idea{font-size:34px;line-height:1.05;font-weight:800;margin:8px 0 12px}
+    .support{font-size:16px;color:#d4ddf8}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03)}
+    .stat b{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-bottom:6px}
+    .stat span{font-size:18px;font-weight:800}
+
+    section{padding:16px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:18px 0 18px}
+    .section-head h2{margin:0;font-size:30px;line-height:1.05;letter-spacing:-.03em}
+    .section-head p{margin:0;color:var(--muted);max-width:720px}
+
+    .grid{display:grid;gap:18px}
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .card h3{margin:0 0 12px;font-size:20px;letter-spacing:-.02em}
+    .kicker{display:inline-block;margin-bottom:10px;font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--brand)}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:8px 0;color:#d6ddf4}
+    .quote{font-size:28px;line-height:1.2;letter-spacing:-.02em;font-weight:700}
+    .quote small{display:block;margin-top:10px;font-size:14px;color:var(--muted);font-weight:600}
+    .pillars .card{position:relative;overflow:hidden}
+    .pillars .num{position:absolute;right:18px;top:16px;font-size:52px;font-weight:900;color:rgba(255,255,255,.06);line-height:1}
+
+    .channel-card{display:flex;flex-direction:column;gap:14px}
+    .role{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#dfe6fa}
+
+    .timeline{display:grid;gap:16px}
+    .phase{display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:start;padding:22px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.03)}
+    .phase .week{padding:18px;border-radius:20px;background:linear-gradient(135deg, rgba(110,168,255,.16), rgba(124,245,210,.10));border:1px solid rgba(255,255,255,.08)}
+    .week h3{margin:0 0 8px;font-size:20px}
+    .week p{margin:0;color:#d8e1fa}
+    .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .phase-grid .box{padding:16px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+    .phase-grid h4{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .phase-grid p{margin:0;color:#e6ebfb}
+
+    .asset-list .card h4,.kpi .card h4{margin:0 0 8px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .hero-note{margin-top:16px;color:var(--muted);font-size:13px}
+
+    .creative-board{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .board{
+      min-height:280px;border-radius:24px;border:1px solid var(--line);overflow:hidden;position:relative;
+      background-size:cover;background-position:center center;
+      box-shadow:var(--shadow)
+    }
+    .board::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,8,16,.1), rgba(5,8,16,.72))}
+    .board .overlay{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:2}
+    .board h3{margin:0 0 8px;font-size:22px}
+    .board p{margin:0;color:#d8e0f7;max-width:95%}
+
+    .headline-list{display:grid;gap:12px}
+    .headline{padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03);font-weight:600}
+
+    .footer{padding:28px;margin:28px 0 10px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg, rgba(110,168,255,.08), rgba(255,255,255,.02));display:grid;gap:12px}
+    .footer .title{font-size:22px;font-weight:800}
+    .small{font-size:13px;color:var(--muted)}
+
+    @media (max-width: 1080px){
+      .hero{grid-template-columns:1fr}
+      .grid.three,.grid.four,.creative-board,.phase-grid{grid-template-columns:1fr 1fr}
+      .phase{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .nav{padding:12px 16px}
+      .wrap{padding:16px}
+      .nav-links{display:none}
+      .grid.two,.grid.three,.grid.four,.creative-board,.phase-grid,.stats{grid-template-columns:1fr}
+      h1{font-size:44px}
+      .quote{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark">DH</div>
+        <div>
+          <div style="font-size:14px;color:var(--muted);font-weight:600">Campaign Plan</div>
+          <div style="font-size:16px">Daily Highlights</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#strategic">Strategic</a>
+        <a href="#audience">Audience</a>
+        <a href="#message">Message</a>
+        <a href="#channels">Channels</a>
+        <a href="#pillars">Content</a>
+        <a href="#assets">Assets</a>
+        <a href="#kpi">KPI</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-card hero-main">
+        <span class="eyebrow">April Campaign Plan</span>
+        <h1><span class="grad">Daily Highlights</span><br/>Đọc nhanh, nhìn rộng</h1>
+        <p class="sub">Bản tin giúp lãnh đạo cập nhật nhanh thông tin cốt lõi, để giữ góc nhìn rộng về thị trường, ngành, đối thủ, cơ quan quản lý và danh tiếng doanh nghiệp.</p>
+        <div class="chips">
+          <span class="chip">Executive Audience</span>
+          <span class="chip">Daily Digest</span>
+          <span class="chip">360° Update</span>
+          <span class="chip">Báo chí + Mạng xã hội</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="#channels">Xem Channel Strategy</a>
+          <a class="btn" href="#assets">Xem Asset Plan</a>
+        </div>
+        <div class="hero-note">Support line: <strong>Bản tin cập nhật 360 độ hàng ngày cho nhà lãnh đạo</strong></div>
+      </div>
+      <div class="hero-side">
+        <div class="glass mini">
+          <h3>Big Idea</h3>
+          <div class="big-idea">Đọc nhanh,<br/>nhìn rộng</div>
+          <div class="support">Đọc nhanh = cô đọng, chọn lọc, dễ nắm bắt. Nhìn rộng = có thêm lớp nhận định để hiểu bối cảnh và tác động lên doanh nghiệp.</div>
+        </div>
+        <div class="glass mini">
+          <h3>Campaign Focus</h3>
+          <div class="stats">
+            <div class="stat"><b>Objective 1</b><span>Awareness</span></div>
+            <div class="stat"><b>Objective 2</b><span>Consideration</span></div>
+            <div class="stat"><b>Main Channel</b><span>Facebook</span></div>
+            <div class="stat"><b>Intent Channel</b><span>Google Search Ads</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategic">
+      <div class="section-head">
+        <div>
+          <h2>1. Strategic Foundation</h2>
+          <p>Khung chiến lược cô đọng để đội marketing, sales và creative cùng nhìn về một hướng truyền thông thống nhất.</p>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <div class="kicker">1.1 Tên dịch vụ</div>
+          <h3>Daily Highlights</h3>
+          <p class="muted">Giữ tên gọi gọn, rõ bản chất và tránh hype công nghệ. Dịch vụ được định vị là một bản tin theo dõi &amp; nhận định tin tức hằng ngày cho tập đoàn, thay vì nhấn quá mạnh vào AI.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">1.2 Vai trò sản phẩm</div>
+          <h3>Executive Daily Digest</h3>
+          <p class="muted">Một bản tin giúp lãnh đạo cập nhật nhanh thông tin cốt lõi, để giữ góc nhìn rộng về thị trường, ngành, đối thủ, cơ quan quản lý và danh tiếng doanh nghiệp.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <div class="quote">“Tôi không có thời gian đọc quá nhiều, nhưng tôi phải nắm các tin quan trọng, ảnh hưởng đến tập đoàn của mình.”<small>— Core audience insight</small></div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="section-head">
+        <div>
+          <h2>2. Communication Objectives &amp; Target Audience</h2>
+          <p>Tập trung làm rõ người cần nói tới, và hành vi mong muốn họ thực hiện sau khi tiếp cận chiến dịch.</p>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <div class="kicker">Objectives</div>
+          <h3>Awareness → Consideration</h3>
+          <ul>
+            <li>Làm TA hiểu Daily Highlights là <strong>bản tin dành cho nhà lãnh đạo</strong>, có góc nhìn cô đọng nhưng vẫn đủ chiều rộng &amp; sâu sắc.</li>
+            <li>Tạo nhu cầu nhận demo / tư vấn / xem mẫu theo ngành hàng.</li>
+            <li>Action kỳ vọng: để lại thông tin để BD tiếp cận và lấy brief.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">Core TA</div>
+          <h3>Lãnh đạo &amp; bộ phận tham mưu</h3>
+          <div class="grid two" style="gap:10px;margin-top:10px">
+            <div class="tag">CEO / Deputy CEO</div>
+            <div class="tag">BOD / HĐQT</div>
+            <div class="tag">Giám đốc Truyền thông / Corporate Affairs</div>
+            <div class="tag">Giám đốc Marketing cấp tập đoàn</div>
+            <div class="tag">Giám đốc Chiến lược / Đầu tư / Vận hành</div>
+            <div class="tag">Văn phòng TGĐ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="message">
+      <div class="section-head">
+        <div>
+          <h2>3. Message Architecture</h2>
+          <p>Một master message đủ rõ để chạy đa kênh, nhưng vẫn linh hoạt kéo xuống key hook và ad copy.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="kicker">Master Message</div>
+        <h3>Daily Highlights giúp nhà lãnh đạo bận rộn cập nhật nhanh những thông tin đáng chú ý trên báo chí và mạng xã hội, kèm góc nhìn, nhận định để theo kịp bối cảnh thị trường và những chuyển động liên quan đến doanh nghiệp.</h3>
+      </div>
+      <div class="grid two" style="margin-top:18px">
+        <div class="card">
+          <div class="kicker">Message 1</div>
+          <h3>Đọc nhanh</h3>
+          <p class="muted">Thu thập dữ liệu từ nhiều nguồn, lọc trùng lặp, phân tích và đóng gói thành format email để lãnh đạo dễ nắm bắt thay vì phải tự theo dõi và đọc rời rạc.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">Message 2</div>
+          <h3>Nhìn rộng</h3>
+          <p class="muted">Theo dõi cả báo chí trực tuyến và mạng xã hội, xoay quanh các chủ thể như doanh nghiệp, đối thủ, chính sách, cơ quan quản lý, địa phương, ngành, lãnh đạo, thương hiệu và sản phẩm/dự án.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="channels">
+      <div class="section-head">
+        <div>
+          <h2>4. Channel Strategy</h2>
+          <p>Phân vai rõ từng kênh để chiến dịch vừa tạo nhận biết, vừa kéo đúng tệp về landing page và form demo.</p>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card channel-card">
+          <div>
+            <div class="kicker">4.1 Main Channel</div>
+            <h3>Facebook — kênh chủ lực</h3>
+          </div>
+          <div class="role">
+            <span class="tag">Mở awareness</span>
+            <span class="tag">Creative ads</span>
+            <span class="tag">Retarget landing page</span>
+          </div>
+          <ul>
+            <li>1 ảnh visual tĩnh</li>
+            <li>1 video ngắn 15–30s</li>
+            <li>1 carousel thể hiện USP</li>
+            <li>Content idea: “Một lãnh đạo cần đọc gì mỗi sáng?”</li>
+          </ul>
+          <p class="muted"><strong>Tone:</strong> Business nhưng không nặng technical; đánh đúng pain point “ít thời gian, cần góc nhìn rộng”.</p>
+        </div>
+        <div class="card channel-card">
+          <div>
+            <div class="kicker">4.2 Intent Capture</div>
+            <h3>Google Search Ads — target nhu cầu</h3>
+          </div>
+          <div class="role">
+            <span class="tag">High-intent traffic</span>
+            <span class="tag">Landing page</span>
+            <span class="tag">Demo request</span>
+          </div>
+          <ul>
+            <li>Keyword cluster: media monitoring, media clipping, báo cáo tin tức</li>
+            <li>Keyword cluster: bản tin truyền thông, theo dõi danh tiếng</li>
+            <li>Keyword cluster: executive newsletter, market intelligence newsletter</li>
+          </ul>
+        </div>
+        <div class="card channel-card">
+          <div>
+            <div class="kicker">4.3 Nurture</div>
+            <h3>Email — awareness</h3>
+          </div>
+          <div class="role">
+            <span class="tag">Segment quản lý trở lên</span>
+            <span class="tag">Tệp công ty lớn / tập đoàn</span>
+            <span class="tag">Khách hàng hiện tại</span>
+          </div>
+          <ul>
+            <li>1 email awareness</li>
+            <li>1 email value proof</li>
+          </ul>
+        </div>
+        <div class="card channel-card">
+          <div>
+            <div class="kicker">4.4 Trust Building</div>
+            <h3>PR trên Brands Vietnam</h3>
+          </div>
+          <div class="role">
+            <span class="tag">Awareness</span>
+            <span class="tag">Credibility</span>
+            <span class="tag">Sponsored box banner</span>
+          </div>
+          <ul>
+            <li>1 bài giới thiệu sản phẩm mới</li>
+            <li>1 bài thought leadership / advertorial</li>
+            <li>1 line box banner bổ trợ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <div class="kicker">4.5 Leadership Voice</div>
+        <h3>LinkedIn — organic only</h3>
+        <ul>
+          <li>1 bài viết từ góc nhìn của sếp — nhờ chị Linh MC đăng</li>
+          <li>1 bài từ góc nhìn của Marketing Manager — nhờ Minh LT đăng</li>
+          <li>Mục tiêu: social proof, leadership voice và tăng uy tín chuyên môn</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pillars" class="pillars">
+      <div class="section-head">
+        <div>
+          <h2>5. Content Pillars</h2>
+          <p>Ba trụ nội dung để mọi asset giữ được cùng một tư duy: từ pain point thời gian đến giá trị góc nhìn rộng.</p>
+        </div>
+      </div>
+      <div class="grid three">
+        <div class="card">
+          <div class="num">01</div>
+          <div class="kicker">Pillar 1</div>
+          <h3>Lãnh đạo không có thời gian</h3>
+          <p class="muted">Bán vế “đọc nhanh”.</p>
+          <ul>
+            <li>An tâm đi họp, cập nhật tin có Daily Highlights</li>
+            <li>Chỉ cần 5 phút mỗi ngày để nắm toàn cảnh truyền thông tập đoàn</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <div class="kicker">Pillar 2</div>
+          <h3>Muốn nhìn rộng, phải đánh giá nhiều chiều</h3>
+          <p class="muted">Bán vế “nhìn rộng”.</p>
+          <ul>
+            <li>Muốn nhìn rộng, phải đánh giá nhiều chiều tin tức</li>
+            <li>Một thay đổi nhỏ trong ngành có thể tạo nên tác động lớn</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <div class="kicker">Pillar 3</div>
+          <h3>Daily Highlights như một thói quen</h3>
+          <p class="muted">Tạo tính habitual, nhất quán với tên dịch vụ.</p>
+          <ul>
+            <li>Mỗi ngày một bản tin, toàn cảnh danh tiếng Tập đoàn</li>
+            <li>Daily Highlights là bản tin truyền thông dành cho lãnh đạo bận rộn</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="assets" class="asset-list">
+      <div class="section-head">
+        <div>
+          <h2>6. Asset Production Plan</h2>
+          <p>Danh mục tài sản cần sản xuất để triển khai đồng bộ across paid, owned và PR.</p>
+        </div>
+      </div>
+      <div class="grid four">
+        <div class="card">
+          <h4>Core Campaign Assets</h4>
+          <ul>
+            <li>Key visual master: <strong>Đọc nhanh, nhìn rộng</strong></li>
+            <li>Landing page</li>
+            <li>3 sample Daily Highlights emails</li>
+            <li>1 video 15–30s</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Facebook Assets</h4>
+          <ul>
+            <li>3 KV tĩnh</li>
+            <li>1 carousel</li>
+            <li>1 video ngắn</li>
+            <li>4–6 copy variants để test</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Email Assets</h4>
+          <ul>
+            <li>2 email sequence</li>
+            <li>3 email sample bản tin</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>PR + LinkedIn</h4>
+          <ul>
+            <li>1 bài giới thiệu / ra mắt</li>
+            <li>1 bài advertorial / thought leadership</li>
+            <li>1 KV banner</li>
+            <li>1 bài cho sếp + 1 bài cho Marketing Manager + 2 hình support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2>7. Suggested Activation Phases</h2>
+          <p>Một roadmap gợi ý theo 4 phase để team dễ xếp lịch triển khai trong tháng.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="phase">
+          <div class="week">
+            <h3>Phase 1</h3>
+            <p>Launch the value of “Đọc nhanh”</p>
+          </div>
+          <div class="phase-grid">
+            <div class="box"><h4>Mục tiêu</h4><p>Khơi pain point “ít thời gian” và giới thiệu Daily Highlights như một executive digest.</p></div>
+            <div class="box"><h4>Key content</h4><p>KV hero, video ngắn, Facebook awareness ads, email awareness.</p></div>
+            <div class="box"><h4>CTA</h4><p>Khám phá dịch vụ / xem landing page.</p></div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="week">
+            <h3>Phase 2</h3>
+            <p>Prove the value of “Nhìn rộng”</p>
+          </div>
+          <div class="phase-grid">
+            <div class="box"><h4>Mục tiêu</h4><p>Chứng minh Daily Highlights không chỉ tổng hợp tin mà còn mở rộng góc nhìn.</p></div>
+            <div class="box"><h4>Key content</h4><p>Carousel USP, advertorial / thought leadership, value proof email.</p></div>
+            <div class="box"><h4>CTA</h4><p>Xem sample email / để lại contact.</p></div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="week">
+            <h3>Phase 3</h3>
+            <p>Build credibility</p>
+          </div>
+          <div class="phase-grid">
+            <div class="box"><h4>Mục tiêu</h4><p>Tăng trust thông qua leadership voice và PR.</p></div>
+            <div class="box"><h4>Key content</h4><p>LinkedIn post của sếp và Marketing Manager, PR bài giới thiệu.</p></div>
+            <div class="box"><h4>CTA</h4><p>Book tư vấn / nhận demo theo ngành.</p></div>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="week">
+            <h3>Phase 4</h3>
+            <p>Retarget &amp; convert</p>
+          </div>
+          <div class="phase-grid">
+            <div class="box"><h4>Mục tiêu</h4><p>Tận dụng search + retargeting để kéo về form demo và tiếp sức cho BD.</p></div>
+            <div class="box"><h4>Key content</h4><p>Search ads intent, retarget Facebook, sample email showcase.</p></div>
+            <div class="box"><h4>CTA</h4><p>Để lại thông tin để BD tiếp cận và lấy brief.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2>8. Creative Reference Direction</h2>
+          <p>Hai visual direction tham khảo để giữ cảm giác hiện đại, executive và “information clarity”.</p>
+        </div>
+      </div>
+      <div class="creative-board">
+        <div class="board" style="background-image:url('https://i.pinimg.com/736x/44/4b/2e/444b2ed578700067a6222e556b1ce450.jpg')">
+          <div class="overlay">
+            <h3>Executive Minimalism</h3>
+            <p>Tập trung vào bố cục sạch, typography lớn, nhấn mạnh cảm giác sáng rõ và tinh gọn thông tin.</p>
+          </div>
+        </div>
+        <div class="board" style="background-image:url('https://i.postimg.cc/XYrkbjN2/Screenshot-2026-04-01-at-15-24-05.png')">
+          <div class="overlay">
+            <h3>Dashboard-inspired Clarity</h3>
+            <p>Khai thác nhịp dữ liệu, card layout và visual “zoom out” để diễn tả góc nhìn rộng hơn của lãnh đạo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2>9. Ready-to-use Headlines</h2>
+          <p>Những headline ngắn để dùng linh hoạt cho landing page, KV, Facebook ads và email subject line.</p>
+        </div>
+      </div>
+      <div class="headline-list">
+        <div class="headline">Daily Highlights: Đọc nhanh, nhìn rộng</div>
+        <div class="headline">An tâm đi họp, cập nhật tin có Daily Highlights</div>
+        <div class="headline">Muốn nhìn rộng, phải đánh giá nhiều chiều tin tức</div>
+        <div class="headline">Daily Highlights là bản tin truyền thông dành cho lãnh đạo bận rộn</div>
+      </div>
+    </section>
+
+    <section id="kpi" class="kpi">
+      <div class="section-head">
+        <div>
+          <h2>10. KPI Framework</h2>
+          <p>Khung đo lường gọn để team theo dõi hiệu quả theo từng tầng funnel.</p>
+        </div>
+      </div>
+      <div class="grid three">
+        <div class="card">
+          <h4>Awareness</h4>
+          <ul>
+            <li>Reach đúng TA</li>
+            <li>Số lượng user reach được</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Consideration</h4>
+          <ul>
+            <li>CTR trên ads</li>
+            <li>Số user truy cập landing page</li>
+            <li>Open rate &amp; CTR email</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Conversion</h4>
+          <ul>
+            <li>Số khách bị trigger và có hỏi BD / CP nằm ngoài workflow Marketing</li>
+            <li>MQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

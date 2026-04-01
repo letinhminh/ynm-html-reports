@@ -1,6 +1,14 @@
 {
     "reports": [
         {
+            "name": "daily-highlights-campaign-plan.html",
+            "path": "reports/digital/daily-highlights-campaign-plan.html",
+            "category": "digital",
+            "size": 27844,
+            "modified": "2026-04-01T15:41:24.666248",
+            "created": "2026-04-01T15:41:27.907691"
+        },
+        {
             "name": "Omo_Sport_Intelligence_2026.html",
             "path": "reports/omo/Omo_Sport_Intelligence_2026.html",
             "category": "omo",
@@ -33,5 +41,5 @@
             "created": "2026-03-31T20:56:06.218569"
         }
     ],
-    "lastUpdated": "2026-03-31T21:00:44.852570"
+    "lastUpdated": "2026-04-01T15:41:29.171346"
 }
