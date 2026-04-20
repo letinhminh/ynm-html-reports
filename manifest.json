@@ -1,6 +1,22 @@
 {
     "reports": [
         {
+            "name": "newsletter_ynm_13-4.html",
+            "path": "reports/newsletters/newsletter_ynm_13-4.html",
+            "category": "newsletters",
+            "size": 90209,
+            "modified": "2026-04-20T12:54:30.579179",
+            "created": "2026-04-20T12:54:30.636490"
+        },
+        {
+            "name": "newsletter_ynm_20-4.html",
+            "path": "reports/newsletters/newsletter_ynm_20-4.html",
+            "category": "newsletters",
+            "size": 62456,
+            "modified": "2026-04-20T12:53:26.031970",
+            "created": "2026-04-20T12:53:26.101394"
+        },
+        {
             "name": "daily-highlights-campaign-plan.html",
             "path": "reports/digital/daily-highlights-campaign-plan.html",
             "category": "digital",
@@ -41,5 +57,5 @@
             "created": "2026-03-31T20:56:06.218569"
         }
     ],
-    "lastUpdated": "2026-04-01T15:41:29.171346"
+    "lastUpdated": "2026-04-20T12:54:57.526338"
 }

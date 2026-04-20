@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouNet Media - AI Newsletter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Plus Jakarta Sans', Arial, sans-serif; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
+        img { border: 0; height: auto; display: block; }
+        .body-bg { background-color: #f1f5f9; padding: 20px 0; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; }
+        
+        /* Typography */
+        .h1 { color: #ffffff; font-size: 26px; font-weight: 800; line-height: 1.2; margin: 0; }
+        .p-hero { color: #94a3b8; font-size: 13px; margin: 8px 0 0 0; }
+        .section-title { font-size: 12px; font-weight: 800; color: #f79423; text-transform: uppercase; letter-spacing: 1px; padding: 25px 25px 15px; }
+
+        /* News Card Components */
+        .card-row { padding: 0 25px 15px; }
+        .card-box { border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }
+        .tag { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+        .tag-social { background: #eef2ff; color: #4338ca; }
+        .tag-press { background: #fff7ed; color: #9a3412; }
+        .sentiment { font-size: 11px; font-weight: 700; }
+        .news-title { font-size: 14px; font-weight: 700; color: #0f172a; text-decoration: none; display: block; margin: 12px 0 8px; line-height: 1.45; }
+        .topic-line { font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+        
+        /* AI Content Area */
+        .ai-box { background-color: #f8fafc; border-radius: 8px; padding: 12px; }
+        .ai-text { font-size: 12.5px; color: #334155; line-height: 1.55; margin: 0; }
+        .ai-text strong { color: #475569; font-weight: 700; }
+
+        /* Sentiment Borders */
+        .border-pos { border-color: #bbf7d0; background-color: #f0fdf4; }
+        .border-neg { border-color: #fecaca; background-color: #fef2f2; }
+        .border-neu { border-color: #e2e8f0; }
+        
+        @media screen and (max-width: 600px) {
+            .container { border-radius: 0; }
+            .stat-col { display: block !important; width: 100% !important; border: 0 !important; padding: 10px 0 !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div class="body-bg">
+        <table class="container" cellpadding="0" cellspacing="0" role="presentation">
+            <!-- LOGO -->
+            <tr>
+                <td style="padding: 20px 25px; border-bottom: 1px solid #f1f5f9;">
+                    <table width="100%">
+                        <tr>
+                            <td><img src="https://younetmedia.com/wp-content/uploads/2025/03/artboard-2-copy2x-20240228074801-egyc-.png" width="120" alt="YouNet Media"></td>
+                            <td align="right" style="color: #94a3b8; font-size: 11px; font-weight: 600;">20/04/2026</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- HERO -->
+            <tr>
+                <td style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 40px 25px;">
+                    <h1 class="h1">Tin tức Nổi bật<br>ngành Thực phẩm đóng gói</h1>
+                    <p class="p-hero">Tuần 11/04 – 16/04/2026</p>
+                    <table width="100%" style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                        <tr>
+                            <td class="stat-col" width="33%">
+                                <div style="color: #f79423; font-size: 20px; font-weight: 800;">10.244</div>
+                                <div style="color: #64748b; font-size: 10px; font-weight: 700;">Bài báo / kỳ</div>
+                            </td>
+                            <td class="stat-col" width="33%" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px;">
+                                <div style="color: #f79423; font-size: 20px; font-weight: 800;">1.454</div>
+                                <div style="color: #64748b; font-size: 10px; font-weight: 700;">Bài MXH chọn lọc</div>
+                            </td>
+                            <td class="stat-col" width="33%" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px;">
+                                <div style="color: #f79423; font-size: 20px; font-weight: 800;">32</div>
+                                <div style="color: #64748b; font-size: 10px; font-weight: 700;">Nổi bật kỳ này</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- INTRO -->
+            <tr>
+                <td style="padding: 25px 25px 5px;">
+                    <div style="background-color: #f8fafc; border-left: 4px solid #f79423; border-radius: 0 8px 8px 0; padding: 16px 20px;">
+                        <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #334155;">
+                            Kính gửi <strong>{{ contact.FIRSTNAME|default:"Quý khách" }}</strong>,<br><br>
+                            Đây là <strong>báo cáo tin tức</strong> mà YouNet Media thực hiện riêng cho <em>{ contact.COMPANY|default:"doanh nghiệp của bạn" }}</em>. Hệ thống AI của chúng tôi sàng lọc hàng trăm nguồn tin, phân loại theo <em>chủ đề, sắc thái</em> và <em>mức độ ưu tiên</em> — để ban lãnh đạo có thể nắm toàn cảnh trong <strong style="color: #f79423;">vòng 5 phút</strong>.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <tr><td class="section-title">Tiêu điểm trong kỳ</td></tr>
+
+            
+            <!-- ITEM 1 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">TikTok / Truyền hình Thanh Hóa</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://tiktok.com/@MS4wLjABAAAAtAYhkOjv-WCzZr7etEgQRdP25KAvyUTvs9W2aMUl7W1Bb42ibdoSePL7i111mGOU/video/7629201974226947348" target="_blank" class="news-title">Triển khai “Tháng hành động vì an toàn thực phẩm” trên địa bàn tỉnh năm 2026</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Lực lượng chức năng tỉnh Thanh Hóa kiểm tra và phát hiện, tạm giữ gần 1.000 sản phẩm thực phẩm có dấu hiệu nhập lậu trong khuôn khổ Tháng hành động vì an toàn thực phẩm.<br><strong>Lý do:</strong> Sắc thái tiêu cực vì bài viết báo cáo về việc phát hiện và thu giữ một khối lượng lớn thực phẩm nhập lậu, cho thấy tồn tại rủi ro an toàn thực phẩm và sự xâm nhập của hàng hóa không rõ nguồn gốc vào thị trường.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 2 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Beatvn</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://fb.com/1854913491492670_1633496234803232" target="_blank" class="news-title">HÀ NỘI RA MẮT CỔNG THÔNG TIN AN TOÀN THỰC PHẨM</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> UBND TP Hà Nội ra mắt Cổng thông tin an toàn thực phẩm, cung cấp thông tin chỉ đạo, kết quả kiểm tra, cảnh báo và cho phép người dân phản ánh vi phạm trực tuyến.<br><strong>Lý do:</strong> Sắc thái TÍCH CỰC vì việc ra mắt cổng thông tin được xem là một biện pháp cải thiện minh bạch, hiệu quả trong quản lý an toàn thực phẩm, tạo điều kiện thuận lợi cho người dân và doanh nghiệp.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 3 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Báo Đồng Tháp</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://fb.com/370146603087087_1256893503093960" target="_blank" class="news-title">Quy định của Trung Quốc về quản lý đăng ký doanh nghiệp nước ngoài đối với thực phẩm nhập khẩu</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Chính sách & Pháp luật Quốc gia</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đề cập đến quy định mới của Trung Quốc về quản lý đăng ký doanh nghiệp nước ngoài đối với thực phẩm nhập khẩu.<br><strong>Lý do:</strong> Sắc thái trung tính vì bài viết  thông báo về một quy định pháp lý của nước ngoài (Trung Quốc) có thể ảnh hưởng đến hoạt động xuất khẩu thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 4 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Tin tức nổi bật trong ngày</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://fb.com/785191674672480_122164806944978729" target="_blank" class="news-title">Báo động ngộ độc thực phẩm: Số vụ tăng đột biến, Bộ Y tế cam kết hành động quyết liệt</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bộ trưởng Bộ Y tế công bố số vụ ngộ độc thực phẩm trong quý 1/2026 tăng đột biến, với 30 vụ (tăng 20 vụ). Bộ Y tế sẽ trình sửa đổi Luật An toàn thực phẩm vào tháng 10 để tăng cường quản lý.<br><strong>Lý do:</strong> Sắc thái tiêu cực vì bài viết cung cấp dữ liệu về sự gia tăng đáng báo động của các vụ ngộ độc thực phẩm, thể hiện một vấn đề nghiêm trọng và rủi ro hiện hữu đối với an toàn thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 5 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">TikTok / VTVcab Tiêu điểm</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://tiktok.com/@MS4wLjABAAAA6kAjBTVH3U8-o8wkLbI2D--syA73DJ6oOp_Zt0Ai5oqVPeBPJVjsokxb532XDfL2/video/7629213102474661128" target="_blank" class="news-title">TP. Hồ Chí Minh: 11 công nhân nhập viện nghi ngộ độc sau bữa ăn trưa tại công ty</a>
+                        <div class="topic-line">Topic &middot; Hoạt động Doanh nghiệp & Dự án · Rủi ro & Khủng hoảng Nội tại</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đưa tin về vụ 11 công nhân nhập viện nghi ngộ độc thực phẩm sau bữa ăn trưa tại một công ty. Sự kiện này liên quan trực tiếp đến vấn đề an toàn thực phẩm trong bếp ăn tập thể.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TIÊU CỰC do đề cập đến một sự cố ngộ độc thực phẩm nghiêm trọng tại nơi làm việc, là một rủi ro về an toàn thực phẩm và sức khỏe, có thể gây ảnh hưởng đến danh tiếng của các nhà cung cấp suất ăn hoặc công ty thực phẩm liên quan.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 6 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Công an xã Ngô Mây</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://fb.com/113667998005857_968039582605186" target="_blank" class="news-title">GIẢI CỨU MÍA ĐƯỜNG VIỆT NAM</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết cảnh báo về tình trạng buôn lậu, gian lận thương mại đường không rõ nguồn gốc, gây ảnh hưởng nghiêm trọng đến thị trường, sức khỏe người tiêu dùng và an toàn xã hội.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì bài viết nêu lên một vấn nạn (buôn lậu đường) gây rối loạn thị trường, cạnh tranh không lành mạnh và tiềm ẩn rủi ro về an toàn thực phẩm, ảnh hưởng đến môi trường kinh doanh chung của ngành thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 7 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Sanvinest Khánh Hòa</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://fb.com/100030502327427_1684398435920218" target="_blank" class="news-title">SANVINEST KHÁNH HÒA ĐẨY MẠNH HỢP TÁC QUỐC TẾ, MỞ RỘNG THỊ TRƯỜNG XUẤT KHẨU</a>
+                        <div class="topic-line">Topic &middot; Hoạt động Doanh nghiệp & Dự án · Truyền thông Thương hiệu & Lãnh đạo</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đưa tin về việc Công ty Sanvinest Khánh Hòa đón tiếp và hợp tác với Tập đoàn King Car (Đài Loan) để mở rộng thị trường xuất khẩu sản phẩm yến sào.<br><strong>Lý do:</strong> Sắc thái TÍCH CỰC vì bài viết mô tả một cơ hội hợp tác quốc tế và mở rộng thị trường xuất khẩu, mang lại lợi ích kinh doanh tiềm năng cho công ty.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 8 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Youtube / VOV1 - Đài tiếng nói Việt Nam</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="http://youtube.com/watch?v=ro4WoYpeNuc" target="_blank" class="news-title">Tin Đời sống & Xã hội - Thực phẩm học đường “nóng”,: TP.HCM ký kết tăng ràng buộc trách nhiệm</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đưa tin về việc Sở An toàn thực phẩm TP.HCM tổ chức lễ ký cam kết bảo đảm an toàn thực phẩm với các cơ sở cung cấp suất ăn cho trường học, trong bối cảnh dư luận lo ngại sau nhiều vụ việc.<br><strong>Lý do:</strong> Sắc thái TRUNG TÍNH vì bài viết chủ yếu thông báo về một hành động quản lý (ký cam kết) nhằm nâng cao an toàn thực phẩm, không đề cập đến kết quả tích cực hay tiêu cực cụ thể.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 9 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / THÁI NGUYÊN 24H</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://fb.com/917389385048134_1296610105866364" target="_blank" class="news-title">Xử phạt 17 triệu đồng cơ sở kinh doanh thực phẩm không rõ nguồn gốc</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Công an phường Bá Xuyên (Thái Nguyên) phối hợp với Đội Quản lý thị trường số 4 xử phạt một cơ sở kinh doanh 17 triệu đồng vì hành vi kinh doanh 400kg thịt ức gà không rõ nguồn gốc.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì bài viết mô tả một vi phạm an toàn thực phẩm, thể hiện rủi ro và sự siết chặt quản lý trong ngành thực phẩm, có thể ảnh hưởng đến môi trường kinh doanh chung.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 10 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Youtube / Trung tâm Xúc tiến Thương mại và Đầu tư (ITPC)</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://youtube.com/watch?v=2RFWPk6StKc" target="_blank" class="news-title">Hộ chiếu xanh cho thực phẩm Việt: Lộ trình mở rộng thị trường xuất khẩu cho doanh nghiệp F&B</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Chính sách công nghiệp, đầu tư nước ngoài, chính sách thương mại quốc tế</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đề cập về hội thảo “Hộ chiếu xanh cho thực phẩm Việt - Lộ trình đáp ứng tiêu chuẩn quốc tế và mở rộng xuất khẩu cho doanh nghiệp F&B” được tổ chức nhằm hỗ trợ doanh nghiệp cập nhật các xu hướng chuyển đổi xanh và các yêu cầu mới về tiêu chuẩn bền vững tại các thị trường xuất khẩu trọng điểm của ngành F&B.<br><strong>Lý do:</strong> Sắc thái TÍCH CỰC vì bài viết đề cập đến một sự kiện hỗ trợ, tạo cơ hội mở rộng thị trường và tăng trưởng xuất khẩu cho các doanh nghiệp trong ngành thực phẩm đóng gói.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 11 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">TikTok / Hóng Sài Gòn</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://tiktok.com/@MS4wLjABAAAA4ztIHLRZOclBb7H7itE7B4Hj31_u1LZhrYQvWJjpOOfyatFfpxxnhNGeYnUFqgou/video/7627389932071374100" target="_blank" class="news-title">Sáng 11/4, Sở Y tế TP.HCM cho biết tính đến sáng cùng ngày, các cơ sở y tế đã ghi nhận 184 ca bệnh nghi ngộ độc thực phẩm tại Trường tiểu học Bình Quới Tây.</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Video đưa tin về vụ ngộ độc thực phẩm tại Trường tiểu học Bình Quới Tây với 184 ca bệnh được ghi nhận, trong đó 43 ca nội trú.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì nội dung báo cáo một sự việc ngộ độc thực phẩm quy mô lớn, ảnh hưởng nghiêm trọng đến sức khỏe học sinh, là một tin tức tiêu cực về an toàn thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 12 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Công an xã Kỳ Thượng, tỉnh Hà Tĩnh</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://fb.com/575551892308560_122190830954792035" target="_blank" class="news-title">CẢNH BÁO: NGUY CƠ TỪ SẢN PHẨM KHÔNG RÕ NGUỒN GỐC TRƯỚC CỔNG TRƯỜNG HỌC</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Công an xã Kỳ Thượng cảnh báo về tình trạng bày bán hàng hóa không rõ nguồn gốc trước cổng trường học, tiềm ẩn nguy cơ mất an toàn thực phẩm và ảnh hưởng đến sức khỏe học sinh.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì bài viết nêu bật một vấn đề tiêu cực, rủi ro về an toàn thực phẩm trong môi trường giáo dục, phản ánh sự quản lý lỏng lẻo và mối đe dọa đến sức khỏe cộng đồng.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 13 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-social">Facebook / Công ty Cổ phần Thực phẩm Minh Bạch TRF - True Foods., JSC</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://fb.com/114340706616241_1580064937455718" target="_blank" class="news-title">TRF chính thức ký kết hợp tác nhập khẩu thịt bò & đồ nguội Belarus về Việt Nam</a>
+                        <div class="topic-line">Topic &middot; Hoạt động Doanh nghiệp & Dự án · Truyền thông Thương hiệu & Lãnh đạo</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Công ty Cổ phần Thực phẩm Minh Bạch (TRF) thông báo ký kết hợp tác chiến lược với nhà máy chế biến thịt hàng đầu Belarus để nhập khẩu thịt bò đóng hộp và đồ nguội chất lượng cao vào Việt Nam.<br><strong>Lý do:</strong> Sắc thái TÍCH CỰC vì bài viết thông báo về một thương vụ hợp tác mở rộng nguồn cung, thể hiện sự phát triển và nỗ lực cung cấp thực phẩm chất lượng của công ty, mang lại cơ hội kinh doanh mới.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 14 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Kinh tế Công Thương</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://kinhte.congthuong.vn/quy-dinh-moi-cua-thuy-dien-ve-mut-thach-co-hieu-luc-tu-thang-6-2025-452179.html" target="_blank" class="news-title">Quy định mới của Thụy Điển về mứt, thạch có hiệu lực từ tháng 6/2026</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Chính sách & Pháp luật Quốc gia</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết thông báo về quy định mới của Thụy Điển về mứt và thạch, có hiệu lực từ tháng 6/2026, yêu cầu nâng hàm lượng trái cây tối thiểu và đặt ra các yêu cầu mới cho doanh nghiệp Việt Nam xuất khẩu sang EU.<br><strong>Lý do:</strong> Sắc thái TRUNG TÍNH vì bài viết chỉ đưa tin về một thay đổi chính sách/chính sách thương mại quốc tế, mang tính thông báo, chưa thể hiện rõ tác động tích cực hay tiêu cực ngay lập tức đến các doanh nghiệp cụ thể trong ngành thực phẩm đóng gói Việt Nam.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 15 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Sài Gòn Giải Phóng</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://sggp.org.vn/ky-vong-san-giao-dich-thit-heo-post848243.html" target="_blank" class="news-title">Kỳ vọng sàn giao dịch thịt heo</a>
+                        <div class="topic-line">Topic &middot; Tín hiệu Tương lai & Cơ hội Mới · Mô hình hợp tác chuỗi giá trị "Farm to Table"</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết nói về việc TP.HCM vận hành thử nghiệm sàn giao dịch thịt heo B2B, kết nối trực tiếp doanh nghiệp với doanh nghiệp, hướng tới tổ chức lại thị trường thực phẩm thiết yếu theo hướng hiện đại, minh bạch, an toàn. Mô hình này tạo kênh thương mại mới và số lượng giao dịch đang tăng dần.<br><strong>Lý do:</strong> Sắc thái TÍCH CỰC vì bài viết mô tả một sáng kiến nhằm hiện đại hóa và minh bạch hóa thị trường thực phẩm (thịt heo), mang lại lợi ích cho ngành chế biến thực phẩm nói chung.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 16 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VOV</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://vov.vn/kinh-te/da-nang-phat-hien-6-tan-duong-tinh-luyen-nhap-lau-post1284522.vov" target="_blank" class="news-title">Đà Nẵng: Phát hiện 6 tấn đường tinh luyện nhập lậu</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Lực lượng Quản lý thị trường Đà Nẵng phát hiện 120 bao đường tinh luyện nhãn hiệu MITR PHOL, xuất xứ Thái Lan, loại 50kg/bao, tổng khối lượng 6 tấn và đã tạm giữ toàn bộ tang vật.<br><strong>Lý do:</strong> Sắc thái Tiêu cực do đề cập đến một sự việc tiêu cực liên quan đến việc nhập lậu nguyên liệu thực phẩm (đường), phản ánh sự vi phạm pháp luật và môi trường kinh doanh thiếu lành mạnh.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 17 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Vietnam.vn</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://www.vietnam.vn/ra-mat-chuyen-muc-an-toan-thuc-pham-tren-vtv1-vi-suc-khoe-cong-dong" target="_blank" class="news-title">Ra mắt chuyên mục 'An toàn thực phẩm' trên VTV1: Vì sức khỏe cộng đồng</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết thông báo việc ra mắt chuyên mục "An toàn thực phẩm" trên kênh VTV1, do Đài Truyền hình Việt Nam phối hợp với Bộ Y tế thực hiện, nhằm cung cấp thông tin, cảnh báo nguy cơ và lan tỏa các mô hình thực phẩm an toàn.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TÍCH CỰC vì bài viết mô tả một hoạt động truyền thông nhằm nâng cao nhận thức về an toàn thực phẩm, có thể tạo ra môi trường kinh doanh minh bạch và lành mạnh hơn, có lợi cho các doanh nghiệp tuân thủ tốt.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 18 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Vietnam.vn</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://www.vietnam.vn/quan-an-gong-minh-truoc-ap-luc-chi-phi-dau-vao-tang-manh" target="_blank" class="news-title">Quán ăn 'gồng mình' trước áp lực chi phí đầu vào tăng mạnh</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Biến động giá nguyên liệu đầu vào</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài báo mô tả tình hình nhiều quán ăn phải tăng giá hoặc "gồng lỗ" do chi phí nguyên liệu đầu vào tăng cao.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC do đề cập đến áp lực tăng chi phí nguyên liệu, một yếu tố tiêu cực làm tăng chi phí sản xuất/kinh doanh trong ngành thực phẩm nói chung.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 19 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Báo Cáo Viên</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://baocaovien.vn/tin-tuc/bo-cong-thuong-lay-y-kien-danh-muc-san-pham-co-muc-do-rui-ro-trung-binh-va-cao/408177.html" target="_blank" class="news-title">Bộ Công Thương lấy ý kiến danh mục sản phẩm có mức độ rủi ro trung bình và cao</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bộ Công Thương đang lấy ý kiến góp ý dự thảo Thông tư ban hành Danh mục sản phẩm, hàng hóa có mức độ rủi ro trung bình và cao để áp dụng biện pháp quản lý phù hợp nhằm đảm bảo an toàn, chất lượng trước khi đưa ra thị trường.<br><strong>Lý do:</strong> Bài viết mang tính thông báo về một quy trình xây dựng chính sách, chưa thể hiện rõ tác động tích cực hay tiêu cực cụ thể. Đây là thông tin tham khảo về sự thay đổi trong môi trường pháp lý.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 20 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Vietnam.vn</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://www.vietnam.vn/xem-xet-cho-phep-su-dung-chat-tao-nac-co-kiem-soat-trong-chan-nuoi" target="_blank" class="news-title">Xem xét cho phép sử dụng chất tạo nạc có kiểm soát trong chăn nuôi</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bộ Nông nghiệp và Môi trường yêu cầu làm rõ việc có cho phép sử dụng chất tạo nạc (Ractopamine) hay không, đồng thời thống nhất quản lý với Bộ Y tế theo chuẩn quốc tế.<br><strong>Lý do:</strong> Bài viết thông báo về một vấn đề chính sách đang được xem xét, liên quan đến an toàn thực phẩm và nguyên liệu đầu vào cho ngành chế biến. Chưa có kết luận hay hành động cụ thể, nên sắc thái là trung tính.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 21 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Phụ nữ Pháp luật</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://phunuphapluat.nguoiduatin.vn/kip-thoi-ngan-chan-bat-giu-hon-12-tan-thuc-pham-chan-lon-dong-lanh-khong-ro-nguon-goc-xuat-xu-a632780.html" target="_blank" class="news-title">Kịp thời ngăn chặn, bắt giữ hơn 12 tấn thực phẩm chân lợn đông lạnh không rõ nguồn gốc, xuất xứ ở Quảng Ninh</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đưa tin lực lượng chức năng tỉnh Quảng Ninh phát hiện và thu giữ hơn 12 tấn chân lợn đông lạnh không rõ nguồn gốc, xuất xứ, có dấu hiệu không đảm bảo an toàn thực phẩm.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TIÊU CỰC do bài báo phản ánh một vi phạm nghiêm trọng về an toàn thực phẩm, gây ra rủi ro cho sức khỏe cộng đồng và ảnh hưởng đến niềm tin vào thị trường thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 22 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Báo Phụ nữ</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://phunuonline.com.vn/2-cuu-cuc-truong-cuc-an-toan-thuc-pham-chuan-bi-hau-toa-phuc-tham-a1580019.html" target="_blank" class="news-title">2 cựu Cục trưởng Cục An toàn thực phẩm chuẩn bị hầu tòa phúc thẩm</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết thông báo Tòa phúc thẩm TAND Tối cao tại Hà Nội sẽ mở phiên tòa xét xử phúc thẩm đối với 2 cựu Cục trưởng Cục An toàn thực phẩm vào ngày 6/5 tới.<br><strong>Lý do:</strong> Bài viết chỉ mang tính thông báo về một sự kiện pháp lý sắp diễn ra, không chứa thông tin tích cực hay tiêu cực nào về tác động đến ngành thực phẩm đóng gói.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 23 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Thương hiệu & Công luận</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://thuonghieucongluan.com.vn/hung-yen-xu-phat-co-so-tang-tru-42-kg-thit-trau-oi-thiu-bien-doi-mau-sac-a313843.html" target="_blank" class="news-title">Hưng Yên: Xử phạt cơ sở tàng trữ 42 kg thịt trâu ôi thiu, biến đổi màu sắc</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Lực lượng chức năng tỉnh Hưng Yên phát hiện và xử phạt một cơ sở kinh doanh đang tàng trữ 42 kg thịt trâu ôi thiu, biến đổi màu sắc, có nguy cơ gây mất an toàn thực phẩm.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC do mô tả một vi phạm nghiêm trọng về an toàn thực phẩm và hành động xử phạt của cơ quan chức năng, cho thấy những rủi ro trong chuỗi cung ứng nguyên liệu thô cho ngành chế biến thực phẩm.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 24 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VOV</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://vov.vn/xa-hoi/dich-ta-heo-chau-phi-bung-phat-can-tho-tieu-huy-ca-tram-con-heo-mac-benh-post1283790.vov" target="_blank" class="news-title">Dịch tả heo Châu Phi bùng phát, Cần Thơ tiêu hủy cả trăm con heo mắc bệnh</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Biến động giá nguyên liệu đầu vào</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Dịch tả heo Châu Phi bùng phát tại Cần Thơ, buộc cơ quan chức năng phải tiêu hủy 113 con heo mắc bệnh. Dịch bệnh gây thiệt hại kinh tế cho người chăn nuôi.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TIÊU CỰC vì thông tin về dịch bệnh trên đàn heo tạo ra rủi ro về biến động và tăng giá nguyên liệu thịt heo đầu vào, ảnh hưởng trực tiếp đến chi phí sản xuất của các công ty chế biến thực phẩm đóng gói từ thịt heo.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 25 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-pos">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Sức khoẻ & Đời sống</span></td>
+                                <td align="right" class="sentiment" style="color: #16a34a;">Tích cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://suckhoedoisong.vn/chung-khoan-phs-khuyen-nghi-mua-co-phieu-mch-169260413072852618.htm" target="_blank" class="news-title">Chứng khoán PHS khuyến nghị mua cổ phiếu MCH</a>
+                        <div class="topic-line">Topic &middot; Hoạt động Doanh nghiệp & Dự án · Kết quả kinh doanh, tài chính, cổ phiếu, cổ đông</div>
+                        <div class="ai-box" style="background-color: #ffffff;">
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Chứng khoán Phú Hưng (PHS) đưa cổ phiếu MCH (Công ty Cổ phần Hàng tiêu dùng Masan) vào danh mục khuyến nghị mua, dựa trên sự phục hồi rõ rệt trong kết quả kinh doanh 2 tháng đầu năm 2026 và hiệu quả ban đầu của mô hình Retail Supreme.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TÍCH CỰC do bài báo chứa thông tin về khuyến nghị đầu tư tích cực từ một công ty chứng khoán.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 26 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VietnamPlus</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://vietnamplus.vn/mcdonalds-lan-san-sang-thi-truong-nuoc-tang-luc-va-soda-tai-my-post1104575.vnp" target="_blank" class="news-title">McDonald's lấn sân sang thị trường nước tăng lực và soda tại Mỹ</a>
+                        <div class="topic-line">Topic &middot; Môi trường Ngành & Địa phương · Môi trường cạnh tranh trong vùng & các đối thủ</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết thông tin về McDonald's dự kiến ra mắt các sản phẩm mới như Dirty Dr Pepper và Mango Pineapple Refresher vào tháng Năm, dòng nước tăng lực bao gồm Red Bull Dragonberry Energizer sẽ được bán từ tháng Tám tại Mỹ.<br><strong>Lý do:</strong> Sắc thái TRUNG TÍNH vì bài báo chỉ mô tả một động thái mở rộng kinh doanh của một doanh nghiệp tại Mỹ, không trực tiếp đề cập đến thị trường Việt Nam.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 27 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Báo Tin tức</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://baotintuc.vn/the-gioi/paldo-hop-tac-voi-bts-ra-mat-san-pham-mi-an-lien-tai-my-20260413155444977.htm" target="_blank" class="news-title">Paldo hợp tác với BTS ra mắt sản phẩm mì ăn liền tại Mỹ</a>
+                        <div class="topic-line">Topic &middot; Môi trường Ngành & Địa phương · Môi trường cạnh tranh trong vùng & các đối thủ</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đưa tin công ty thực phẩm Hàn Quốc Paldo hợp tác với nhóm nhạc BTS để ra mắt dòng mì ăn liền ramyeon mới tại thị trường Mỹ, như một phần chiến lược toàn cầu hóa.<br><strong>Lý do:</strong> Sắc thái Trung tính vì đây là tin tức mô tả hoạt động ra mắt sản phẩm mới của một doanh nghiệp tại Mỹ, không trực tiếp đề cập thị trường Việt Nam.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 28 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neu">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VTV</span></td>
+                                <td align="right" class="sentiment" style="color: #64748b;">Trung tính</td>
+                            </tr>
+                        </table>
+                        <a href="https://vtv.vn/video/xoa-bo-giet-mo-gia-suc-gia-cam-khong-du-dieu-kien-108691512.htm" target="_blank" class="news-title">Xóa bỏ giết mổ gia súc, gia cầm không đủ điều kiện</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết thông báo về việc TP Hà Nội có bước tiến trong sắp xếp quy hoạch hệ thống giết mổ, với mục tiêu xóa bỏ hàng trăm cơ sở giết mổ nhỏ lẻ không đủ điều kiện trong năm nay để đảm bảo an toàn thực phẩm.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TRUNG TÍNH do bài báo chủ yếu thông báo về một chủ trương, kế hoạch hành động của chính quyền mà không nêu lên cơ hội hay rủi ro cụ thể, trực tiếp cho các doanh nghiệp thực phẩm đóng gói.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 29 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Dân Việt</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://danviet.vn/dien-bien-lam-ro-bat-thuong-nguon-goc-thuc-pham-do-don-vi-cung-cap-dua-vao-nhieu-truong-hoc-o-xa-si-pa-phin-d1417421.html" target="_blank" class="news-title">Điện Biên: Làm rõ bất thường nguồn gốc thực phẩm do đơn vị cung cấp đưa vào nhiều trường học ở xã Si Pa Phìn</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết phản ánh việc phát hiện thực phẩm không rõ nguồn gốc, không đúng quy trình cung ứng theo hợp đồng được đưa vào bếp ăn nhiều trường học ở xã Si Pa Phìn, Điện Biên. Hai hợp tác xã do cùng một người làm giám đốc bị tố cáo vi phạm.<br><strong>Lý do:</strong> Sắc thái được đánh giá là TIÊU CỰC do bài báo đề cập đến sự việc vi phạm an toàn thực phẩm trong chuỗi cung ứng thực phẩm cho trường học, có thể gây ảnh hưởng đến sức khỏe cộng đồng và làm xấu hình ảnh ngành thực phẩm nói chung.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 30 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VTV</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://vtv.vn/canh-bao-nguy-co-phan-ve-tu-thuc-pham-la-10026041313204891.htm" target="_blank" class="news-title">Cảnh báo nguy cơ phản vệ từ thực phẩm lạ</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Bài viết đề cập đến người bệnh 63 tuổi nhập viện do phản vệ sau khi ăn trứng kiến. Đồng thời cảnh báo về nguy cơ phản vệ có thể xảy ra khi tiêu thụ các loại thực phẩm lạ.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì bài báo đề cập đến một rủi ro sức khỏe liên quan trực tiếp đến việc tiêu thụ thực phẩm, có thể ảnh hưởng đến nhận thức và hành vi tiêu dùng.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 31 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / Dân Trí</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="http://https://dantri.com.vn/phap-luat/phat-hien-xe-may-cho-210kg-long-lon-co-dau-hieu-phan-huy-20260411171457691.htm" target="_blank" class="news-title">Phát hiện xe máy chở 210kg lòng lợn có dấu hiệu phân hủy</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Lực lượng chức năng phát hiện và thu giữ 210kg lòng lợn không rõ nguồn gốc, có dấu hiệu phân hủy, đang được vận chuyển để tiêu thụ.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC vì bài báo phản ánh một sự việc tiêu cực, rủi ro liên quan trực tiếp đến an toàn thực phẩm và chuỗi cung ứng thực phẩm (thịt lợn), có thể ảnh hưởng đến ngành chế biến thực phẩm đóng gói.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- ITEM 32 -->
+            <tr>
+                <td class="card-row">
+                    <div class="card-box border-neg">
+                        <table width="100%">
+                            <tr>
+                                <td><span class="tag tag-press">News / VNBIZ News</span></td>
+                                <td align="right" class="sentiment" style="color: #b91c1c;">Tiêu cực</td>
+                            </tr>
+                        </table>
+                        <a href="https://vnbiznews.com/hieu-truong-o-tuyen-quang-bi-dinh-chi-cong-tac-vi-xuat-hien-nhieu-tui-lac-moc-trong-bep-an-pid1989472486.html" target="_blank" class="news-title">Hiệu trưởng ở Tuyên Quang bị đình chỉ công tác vì xuất hiện nhiều túi lạc mốc trong bếp ăn</a>
+                        <div class="topic-line">Topic &middot; Môi trường Vĩ mô · Tình hình chính trị – pháp lý về An toàn Thực phẩm</div>
+                        <div class="ai-box" >
+                            <p class="ai-text"><strong>Tóm tắt:</strong> Hiệu trưởng một trường mầm non bị đình chỉ công tác sau khi phụ huynh phản ánh về việc phát hiện nhiều túi lạc mốc trong bếp ăn của trường.<br><strong>Lý do:</strong> Sắc thái TIÊU CỰC. Bài viết phản ánh  rủi ro về an toàn thực phẩm trong bếp ăn tập thể (trường học), cho thấy sự vi phạm trong bảo quản nguyên liệu thực phẩm, có thể dẫn đến các biện pháp xử lý và siết chặt quản lý.<br></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+
+            <!-- CTA -->
+            <tr>
+                <td style="padding: 10px 25px 30px;">
+                    <table width="100%" style="background-color: #1e293b; border-radius: 12px; text-align: center;">
+                        <tr>
+                            <td style="padding: 25px;">
+                                <p style="color: #ffffff; margin: 0 0 20px 0; font-size: 14px;">AI-Newsletter là bản tin điện tử theo dõi và nhận định tin tức trên báo chí và mạng xã hội. Ứng dụng AI để diễn giải bối cảnh và tác động của từng bài viết, cung cấp góc nhìn đa chiều về môi trường kinh doanh.</p>
+                                <a href="https://younetmedia.com/lien-he/" style="background-color: #f79423; color: #ffffff; padding: 12px 25px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-block;">Tư vấn giải pháp</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- FOOTER -->
+            <tr>
+                <td style="padding: 30px; background-color: #f8fafc; border-top: 1px solid #f1f5f9; text-align: center;">
+                    <img src="https://younetmedia.com/wp-content/uploads/2025/03/artboard-2-copy2x-20240228074801-egyc-.png" width="100" style="margin: 0 auto 15px; opacity: 0.5;">
+                    <p style="font-size: 11px; color: #94a3b8; line-height: 1.8; margin: 0;">
+                        &copy; 2026 YouNet Media. All rights reserved.<br>
+                        Tầng 2, Lữ Gia Plaza, 70 Lữ Gia, P. Phú Thọ, TP.HCM<br>
+                        <a href="mailto:info@younetmedia.com" style="color: #f79423; text-decoration: none;">info@younetmedia.com</a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
