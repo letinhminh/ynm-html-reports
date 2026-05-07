@@ -1,12 +1,20 @@
 {
     "reports": [
         {
+            "name": "daily-highlights-idico-16-3-2025.html",
+            "path": "reports/newsletters/daily-highlights-idico-16-3-2025.html",
+            "category": "newsletters",
+            "size": 96678,
+            "modified": "2026-05-07T15:42:41.479755",
+            "created": "2026-05-07T15:42:50.835226"
+        },
+        {
             "name": "newsletter_ynm_13-4.html",
             "path": "reports/newsletters/newsletter_ynm_13-4.html",
             "category": "newsletters",
             "size": 90209,
             "modified": "2026-04-20T12:54:30.579179",
-            "created": "2026-04-20T12:54:30.636490"
+            "created": "2026-04-20T14:42:51.911112"
         },
         {
             "name": "newsletter_ynm_20-4.html",
@@ -14,7 +22,7 @@
             "category": "newsletters",
             "size": 62456,
             "modified": "2026-04-20T12:53:26.031970",
-            "created": "2026-04-20T12:53:26.101394"
+            "created": "2026-04-20T14:42:51.898863"
         },
         {
             "name": "daily-highlights-campaign-plan.html",
@@ -57,5 +65,5 @@
             "created": "2026-03-31T20:56:06.218569"
         }
     ],
-    "lastUpdated": "2026-04-20T12:54:57.526338"
+    "lastUpdated": "2026-05-07T15:43:08.632952"
 }
