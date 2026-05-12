@@ -1,6 +1,14 @@
 {
     "reports": [
         {
+            "name": "pvcfc-16032026.html",
+            "path": "reports/newsletters/pvcfc-16032026.html",
+            "category": "newsletters",
+            "size": 38764,
+            "modified": "2026-05-12T16:18:56.612354",
+            "created": "2026-05-12T16:18:59.893334"
+        },
+        {
             "name": "daily-highlights-idico-16-3-2025.html",
             "path": "reports/newsletters/daily-highlights-idico-16-3-2025.html",
             "category": "newsletters",
@@ -65,5 +73,5 @@
             "created": "2026-03-31T20:56:06.218569"
         }
     ],
-    "lastUpdated": "2026-05-07T15:43:08.632952"
+    "lastUpdated": "2026-05-12T16:19:22.311380"
 }
